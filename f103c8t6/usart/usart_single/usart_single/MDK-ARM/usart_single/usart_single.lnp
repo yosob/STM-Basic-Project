@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"usart_single\startup_stm32f103xb.o"
+"usart_single\main.o"
+"usart_single\gpio.o"
+"usart_single\usart.o"
+"usart_single\stm32f1xx_it.o"
+"usart_single\stm32f1xx_hal_msp.o"
+"usart_single\stm32f1xx_hal_gpio_ex.o"
+"usart_single\stm32f1xx_hal_tim.o"
+"usart_single\stm32f1xx_hal_tim_ex.o"
+"usart_single\stm32f1xx_hal_uart.o"
+"usart_single\stm32f1xx_hal.o"
+"usart_single\stm32f1xx_hal_rcc.o"
+"usart_single\stm32f1xx_hal_rcc_ex.o"
+"usart_single\stm32f1xx_hal_gpio.o"
+"usart_single\stm32f1xx_hal_dma.o"
+"usart_single\stm32f1xx_hal_cortex.o"
+"usart_single\stm32f1xx_hal_pwr.o"
+"usart_single\stm32f1xx_hal_flash.o"
+"usart_single\stm32f1xx_hal_flash_ex.o"
+"usart_single\stm32f1xx_hal_exti.o"
+"usart_single\system_stm32f1xx.o"
+--strict --scatter "usart_single\usart_single.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "usart_single.map" -o usart_single\usart_single.axf
