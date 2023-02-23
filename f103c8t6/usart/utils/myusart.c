@@ -31,3 +31,15 @@ void mhex_to_strd(uint16_t MHEX,uint8_t *STRD)
 }
 
 
+void Send_16s(UART_HandleTypeDef* uartHandle, uint16_t* data, uint8_t datanum)
+{
+	uint8_t senddata[2 * datanum];
+	for(int data_ordernum = 0; data_ordernum < datanum;)
+	{
+		senddata[2*data_ordernum] = (data[data_ordernum] & 0xff00) >> 8;
+		senddata[2*data_ordernum + 1] = data[data_ordernum] & 0xff;
+		data_ordernum ++;
+	}
+	
+	HAL_UART_Transmit(uartHandle, senddata, 2 * datanum, UARTTIMEOUT);
+}
